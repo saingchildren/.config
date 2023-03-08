@@ -66,9 +66,22 @@ require('packer').startup(function(use)
       }
   }
 
-
-
-  use { 'iamcco/markdown-preview.nvim' }
+	use({
+		"iamcco/markdown-preview.nvim",
+		run = function()
+			vim.fn["mkdp#util#install"]()
+		end,
+		setup = function()
+			local g = vim.g
+			g.mkdp_auto_close = 1
+			g.mkdp_page_title = "${name}.md"
+			g.mkdp_preview_options = {
+				disable_sync_scroll = 0,
+				disable_filename = 1,
+			}
+		end,
+		ft = "markdown",
+	})
 
   use 'L3MON4D3/LuaSnip'
   use({
@@ -83,5 +96,6 @@ require('packer').startup(function(use)
   use 'windwp/nvim-autopairs'
   use 'windwp/nvim-ts-autotag'
   use 'prettier/vim-prettier'
+  use 'metakirby5/codi.vim'
 end
 )

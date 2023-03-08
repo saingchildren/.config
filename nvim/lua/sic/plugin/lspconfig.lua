@@ -126,7 +126,8 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
         vim.lsp.diagnostic.on_publish_diagnostics, {
         underline = true,
         update_in_insert = false,
-        virtual_text = { spacing = 4, prefix = "●" },
+        --virtual_text = { spacing = 4, prefix = "●" }, 可以讓未被使用的變數出現提醒
+        virtual_text = false, --關閉提醒
         severity_sort = true,
     }
     )
