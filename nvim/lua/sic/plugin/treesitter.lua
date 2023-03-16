@@ -17,6 +17,11 @@ ts.setup {
         "html",
         "lua",
         "markdown",
+        "vue",
+        "javascript",
+        "python",
+        "vim",
+        "fish",
     },
     autotag = {
         enable = true,

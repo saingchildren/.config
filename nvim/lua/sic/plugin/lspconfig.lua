@@ -85,7 +85,7 @@ nvim_lsp.sourcekit.setup {
 }
 
 -- setup這個會讓lua存檔太快回朔
---nvim_lsp.sumneko_lua.setup {
+--nvim_lsp.lua_ls.setup {
 --    capabilities = capabilities,
 --    on_attach = function(client, bufnr)
 --      on_attach(client, bufnr)
@@ -106,6 +106,11 @@ nvim_lsp.sourcekit.setup {
 --        },
 --    },
 --}
+
+nvim_lsp.pyright.setup {
+    on_attach = on_attach,
+    flags = lsp_flags,
+}
 
 nvim_lsp.tailwindcss.setup {
     on_attach = on_attach,
