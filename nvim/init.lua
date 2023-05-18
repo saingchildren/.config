@@ -16,9 +16,9 @@ require('sic.plugin.treesitter')
 require('sic.plugin.ts-autotag')
 require('sic.plugin.lspsaga')
 require('sic.plugin.web-devicon')
+require("sic.plugin.markdown")
 require'lspconfig'.pyright.setup{}
 require('rest-nvim').setup()
 require'lspconfig'.volar.setup{
-  filetypes = {'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json'}
+  filetypes = {"vue"}
 }
-
