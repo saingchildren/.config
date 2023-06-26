@@ -67,10 +67,10 @@ protocol.CompletionItemKind = {
 -- Set up completion using nvim_cmp with LSP source
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
-nvim_lsp.flow.setup {
-    on_attach = on_attach,
-    capabilities = capabilities
-}
+--nvim_lsp.flow.setup {
+--    on_attach = on_attach,
+--    capabilities = capabilities
+--}
 
 nvim_lsp.tsserver.setup {
     on_attach = on_attach,
@@ -79,10 +79,10 @@ nvim_lsp.tsserver.setup {
     capabilities = capabilities
 }
 
-nvim_lsp.sourcekit.setup {
-    on_attach = on_attach,
-    capabilities = capabilities,
-}
+--nvim_lsp.sourcekit.setup {
+--    on_attach = on_attach,
+--    capabilities = capabilities,
+--}
 
 -- setup這個會讓lua存檔太快回朔
 --nvim_lsp.lua_ls.setup {
@@ -122,10 +122,10 @@ nvim_lsp.cssls.setup {
     capabilities = capabilities
 }
 
-nvim_lsp.astro.setup {
-    on_attach = on_attach,
-    capabilities = capabilities
-}
+--nvim_lsp.astro.setup {
+--    on_attach = on_attach,
+--    capabilities = capabilities
+--}
 
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
         vim.lsp.diagnostic.on_publish_diagnostics, {
@@ -143,7 +143,7 @@ capabilities.textDocument.completion.completionItem.snippetSupport = true
 nvim_lsp.emmet_ls.setup({
     -- on_attach = on_attach,
     capabilities = capabilities,
-    filetypes = { 'html', 'typescriptreact', 'javascriptreact', 'css', 'sass', 'scss', 'less' },
+    filetypes = { 'html', 'typescriptreact', 'javascriptreact'  },
     init_options = {
       html = {
         options = {
@@ -153,6 +153,11 @@ nvim_lsp.emmet_ls.setup({
       },
     }
 })
+
+nvim_lsp.csharp_ls.setup{
+  cmd = { 'csharp-ls' },
+  filetypes = { 'cs' }
+}
 
 -- Diagnostic symbols in the sign column (gutter)
 local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }

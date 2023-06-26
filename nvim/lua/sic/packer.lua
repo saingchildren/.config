@@ -138,5 +138,6 @@ require('packer').startup(function(use)
     end
   }
   --use "aca/emmet-ls"
+  use 'OmniSharp/omnisharp-vim'
 end
 )
